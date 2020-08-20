@@ -1,0 +1,53 @@
+ while (RR=true)      
+        {   
+             for(int i=0;i<no;i++)
+                { if (i==0&&counter[i]>0)
+                    { if(rrbrst[i]<=Qno)
+                        {  start[i]=arrival[i];
+                         
+                          end[i]=start[i]+rrbrst[i];
+                          counter[i]=-1;
+                          System.out.println(id[i]+"     "+arrival[i]+"       "+brst[i]+"      "+start[i]+"    "+end[i]);
+                        }
+                    
+                      else if(rrbrst[i]>Qno)
+                       {
+                           start[i]=arrival[i];
+                          end[i]=start[i]+Qno;
+                          rrbrst[i]=rrbrst[i]-Qno;
+                          System.out.println(id[i]+"     "+arrival[i]+"       "+brst[i]+"      "+start[i]+"    "+end[i]);
+                        }
+                      
+                    }
+                
+                 else if(i!=0&&counter[i]>0)
+                        { 
+                            if(rrbrst[i]<=Qno)
+                           {  start[i]=end[i-1];
+                             end[i]=start[i]+rrbrst[i];
+                             counter[i]=-1;
+                             System.out.println(id[i]+"     "+arrival[i]+"       "+brst[i]+"      "+start[i]+"    "+end[i]);
+                             
+                           }
+                    
+                           else if(rrbrst[i]>Qno)
+                            {
+                                start[i]=end[i-1];
+                                end[i]=start[i]+Qno;
+                               rrbrst[i]=rrbrst[i]-Qno;
+                               System.out.println(id[i]+"     "+arrival[i]+"       "+brst[i]+"      "+start[i]+"    "+end[i]);
+                            }
+                         
+                        }
+             //   endo=end[i];
+                }
+             int count=0;
+             for(int i=0;i<no;i++)
+           {if(counter[i]==-1)
+                {
+                   count+=1;
+                   if(count==no)
+                      {RR=false;}
+                }
+            }
+        }

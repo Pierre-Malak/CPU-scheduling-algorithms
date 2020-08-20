@@ -1,0 +1,10 @@
+
+id  Arrival  Burst  start  end 
+ 4     1       1      1    2
+3     2       2      2    4
+2     3       3      4    7
+1     4       4      7    11
+The Gannt Chart is :-	| P4	| P3	| P2	| P1	1	2	4	7The avg Turn around Time is = 3
+The Response Time is = 9.0
+The Average Wating Time is = 3.0
+The NO OF Context= 3
